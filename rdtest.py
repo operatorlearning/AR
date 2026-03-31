@@ -525,59 +525,6 @@ def visualize_results(X_test, pred, true,
         plt.savefig(save_path.replace('.', '_3d.'), bbox_inches='tight', dpi=dpi)
     plt.show()
 
-import scipy.io as sio
-import os
-import scipy.io as sio
-import numpy as np
-
-
-def export_for_interactive(X_test, pred, true, save_path="ELNO_interactive_data.mat"):
-    """
-    导出预测、真实值、误差等数据，供MATLAB生成交互式 .fig 文件
-
-    Parameters
-    ----------
-    X_test : array-like
-        测试坐标 (N, 2)，第0列为 t，第1列为 x
-    pred : array-like
-        模型预测值 (N,)
-    true : array-like
-        参考真实值 (N,)
-    save_path : str
-        保存的 .mat 文件路径（默认推荐带论文缩写，便于识别）
-    """
-    # 提取唯一坐标并构建网格
-    t_coords = np.unique(X_test[:, 0])
-    x_coords = np.unique(X_test[:, 1])
-
-    # 重塑为二维网格
-    pred_grid = pred.reshape(len(t_coords), len(x_coords))
-    true_grid = true.reshape(len(t_coords), len(x_coords))
-    error_grid = pred_grid - true_grid  # 误差图核心数据
-
-    # 构建 X_grid 和 T_grid（与 visualize_results 函数一致）
-    T_grid, X_grid = np.meshgrid(t_coords, x_coords, indexing='ij')
-
-    # 打包所有数据
-    data_dict = {
-        'X_grid': X_grid,  # x 坐标网格
-        'T_grid': T_grid,  # t 坐标网格
-        'pred_grid': pred_grid,  # 模型预测
-        'true_grid': true_grid,  # 参考解
-        'error_grid': error_grid,  # 点-wise 误差（已加入）
-        't_coords': t_coords,
-        'x_coords': x_coords,
-        'vmin': float(min(pred.min(), true.min())),  # 用于颜色范围统一
-        'vmax': float(max(pred.max(), true.max())),
-        'vmax_err': float(np.max(np.abs(error_grid)))  # 误差图颜色范围
-    }
-
-    sio.savemat(save_path, data_dict)
-    print(f"✅ 交互式数据已导出至：{save_path}")
-    print(f"   包含内容：Prediction / Reference Solution / Error 三个网格")
-    print(f"   请用MATLAB加载后分别生成 .fig 文件")
-
-
 def show(model, tx_grid,
          colormap=Config.colormap,
          colormap_3d='coolwarm',
@@ -616,14 +563,6 @@ def show(model, tx_grid,
         colormap=colormap,
         colormap_3d=colormap_3d,
         colormap_error=colormap_error
-    )
-
-    # 新增：导出供交互式 .fig 使用
-    export_for_interactive(
-        tx_grid.numpy(),
-        pred[0].numpy(),
-        y_test[0].numpy(),
-        save_path="ELNO_interactive_data.mat"  # 建议带论文名称
     )
 
 
