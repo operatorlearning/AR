@@ -60,3 +60,9 @@ Install the required packages with:
 ```bash
 pip install torch numpy scipy matplotlib
 ```
+## Quick Start
+
+Run any experiment script directly. For example:
+
+```bash
+python possiontest.py
