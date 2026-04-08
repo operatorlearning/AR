@@ -31,12 +31,35 @@ Compared with conventional fully gradient-based operator learning methods, this 
 
 ---
 
+## Framework
+
+<p align="center">
+  <img src="mainstruction.png" width="700"/>
+</p>
+
+<p align="center">
+  Overview of the Alternating RandONets framework.
+</p>
+
+---
+
 ## Repository Structure
 
 ```text
 .
 ├── LICENSE
 ├── README.md
+├── mainstruction.png
+├── heatgit.png
+├── heatgit1.png
+├── burgersgit.png
+├── burgersgit1.png
+├── rdgit.png
+├── rdgit1.png
+├── poissongit.png
+├── poissongit1.png
+├── 3dpoisson.png
+├── 3dpoisson1.png
 ├── burgerstest.py
 ├── heattest.py
 ├── pi-possiontest.py
@@ -44,6 +67,8 @@ Compared with conventional fully gradient-based operator learning methods, this 
 ├── possiontest.py
 └── rdtest.py
 ```
+
+---
 
 ## Requirements
 
@@ -60,9 +85,105 @@ Install the required packages with:
 ```bash
 pip install torch numpy scipy matplotlib
 ```
+
+---
+
 ## Quick Start
 
 Run any experiment script directly. For example:
 
 ```bash
 python possiontest.py
+```
+
+Other available scripts include:
+
+```bash
+python pi-possiontest.py
+python poisson5d.py
+python heattest.py
+python burgerstest.py
+python rdtest.py
+```
+
+---
+
+## File Description
+
+- `possiontest.py` - standard Alternating RandONets experiment
+- `pi-possiontest.py` - physics-informed Alternating RandONets experiment
+- `poisson5d.py` - higher-dimensional experiment
+- `heattest.py` - additional benchmark test
+- `burgerstest.py` - additional benchmark test
+- `rdtest.py` - additional benchmark test
+
+---
+
+## Results
+
+### Example 1
+
+<p align="center">
+  <img src="poissongit.png" width="45%"/>
+  <img src="poissongit1.png" width="45%"/>
+</p>
+
+### Example 2
+
+<p align="center">
+  <img src="3dpoisson.png" width="45%"/>
+  <img src="3dpoisson1.png" width="45%"/>
+</p>
+
+### Example 3
+
+<p align="center">
+  <img src="heatgit.png" width="45%"/>
+  <img src="heatgit1.png" width="45%"/>
+</p>
+
+### Example 4
+
+<p align="center">
+  <img src="burgersgit.png" width="45%"/>
+  <img src="burgersgit1.png" width="45%"/>
+</p>
+
+### Example 5
+
+<p align="center">
+  <img src="rdgit.png" width="45%"/>
+  <img src="rdgit1.png" width="45%"/>
+</p>
+
+---
+
+## Notes
+
+- This repository is intended for research and experimental use.
+- The code is organized as independent scripts for different benchmark settings.
+- The current implementation emphasizes efficiency, simplicity, and reproducibility.
+- The framework can be further adapted to other operator learning tasks by modifying the data generation and evaluation components.
+
+---
+
+## Citation
+
+If you use this repository in your research, please cite the corresponding paper:
+
+```bibtex
+@article{alternatingrandonets,
+  title   = {Alternating RandONets: Efficient Operator Learning via Random Projection and Alternating Optimization},
+  author  = {Author(s)},
+  journal = {arXiv / Journal},
+  year    = {2026}
+}
+```
+
+Please replace this entry with the final publication information.
+
+---
+
+## License
+
+This project is released under the Apache-2.0 License.
