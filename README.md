@@ -1,33 +1,33 @@
 # Alternating RandONets
 
 Alternating RandONets is an efficient operator learning framework based on random projection and alternating optimization.  
-Instead of training all network parameters with gradient descent, the method randomly initializes hidden-layer weights and updates output-layer weights analytically through closed-form least-squares solutions. This design preserves high training efficiency while improving flexibility and predictive performance.
+Instead of training all network parameters using gradient descent, the framework randomly initializes hidden-layer weights and computes output-layer weights analytically through closed-form least-squares updates. This design significantly improves training efficiency while retaining strong approximation capability.
 
-This repository contains the implementation of Alternating RandONets for benchmark operator learning tasks, together with visualization and export utilities.
+This repository contains several implementations and experiments of Alternating RandONets for benchmark operator learning tasks, including supervised and physics-informed settings.
 
 ---
 
 ## Highlights
 
-- **Fast training** with analytical output-weight updates
-- **Alternating optimization** for both branch and trunk output layers
-- **Random projection framework** with reduced computational overhead
-- **Efficient implementation** with compact trainable parameterization
-- **Built-in visualization tools** for predictions, references, and pointwise errors
-- **MATLAB export support** for interactive post-processing
+- Fast training through analytical output-weight updates
+- Alternating optimization for branch and trunk output layers
+- Random projection based architecture with low computational overhead
+- Compact parameterization with strong predictive performance
+- Support for both supervised and physics-informed learning
+- Built-in visualization and MATLAB export utilities
 
 ---
 
 ## Method Overview
 
-Alternating RandONets builds on the random projection idea used in RandONets and introduces an alternating optimization strategy:
+Alternating RandONets builds on the idea of random projection and introduces an alternating optimization strategy:
 
-1. Hidden-layer weights are randomly initialized and kept fixed.
-2. The branch-side output weights are updated analytically using a regularized least-squares solution.
-3. The trunk-side output weights are then updated analytically in closed form.
+1. Hidden-layer parameters are randomly initialized and fixed.
+2. The output weights associated with the branch network are updated by solving a regularized least-squares problem.
+3. The output weights associated with the trunk network are then updated in closed form.
 4. These two steps are alternated during training.
 
-Compared with conventional gradient-based operator learning models, this approach significantly reduces training time while maintaining strong approximation capability.
+Compared with conventional fully gradient-based operator learning methods, this framework greatly reduces training cost and improves efficiency.
 
 ---
 
@@ -35,6 +35,27 @@ Compared with conventional gradient-based operator learning models, this approac
 
 ```text
 .
-├── main.py                  # Main training / testing script
-├── README.md                # Project documentation
-└── ...                      # Additional scripts, data, or utilities
+├── LICENSE
+├── README.md
+├── burgerstest.py
+├── heattest.py
+├── pi-possiontest.py
+├── poisson5d.py
+├── possiontest.py
+└── rdtest.py
+
+
+## Requirements
+
+The code was tested with the following environment:
+
+- Python 3.9+
+- PyTorch 2.0+
+- NumPy
+- SciPy
+- Matplotlib
+
+Install the required packages with:
+
+```bash
+pip install torch numpy scipy matplotlib
