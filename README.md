@@ -34,11 +34,11 @@ Compared with conventional fully gradient-based operator learning methods, this 
 ## Framework
 
 <p align="center">
-  <img src="mainstruction.png" width="700"/>
+  <img src="images/mainstruction.png" width="760"/>
 </p>
 
 <p align="center">
-  Overview of the Alternating RandONets framework.
+  <em>Overall workflow of Alternating RandONets, including random feature generation and alternating closed-form optimization for branch and trunk output layers.</em>
 </p>
 
 ---
@@ -49,17 +49,18 @@ Compared with conventional fully gradient-based operator learning methods, this 
 .
 ├── LICENSE
 ├── README.md
-├── mainstruction.png
-├── heatgit.png
-├── heatgit1.png
-├── burgersgit.png
-├── burgersgit1.png
-├── rdgit.png
-├── rdgit1.png
-├── poissongit.png
-├── poissongit1.png
-├── 3dpoisson.png
-├── 3dpoisson1.png
+├── images
+│   ├── 3dpoisson.png
+│   ├── 3dpoisson1.png
+│   ├── burgersgit.png
+│   ├── burgersgit1.png
+│   ├── heatgit.png
+│   ├── heatgit1.png
+│   ├── mainstruction.png
+│   ├── poissongit.png
+│   ├── poissongit1.png
+│   ├── rdgit.png
+│   └── rdgit1.png
 ├── burgerstest.py
 ├── heattest.py
 ├── pi-possiontest.py
@@ -113,47 +114,67 @@ python rdtest.py
 - `possiontest.py` - standard Alternating RandONets experiment
 - `pi-possiontest.py` - physics-informed Alternating RandONets experiment
 - `poisson5d.py` - higher-dimensional experiment
-- `heattest.py` - additional benchmark test
-- `burgerstest.py` - additional benchmark test
-- `rdtest.py` - additional benchmark test
+- `heattest.py` - benchmark experiment
+- `burgerstest.py` - benchmark experiment
+- `rdtest.py` - benchmark experiment
 
 ---
 
-## Results
+## Visualization Results
 
-### Example 1
+### Prediction and reference visualization
 
 <p align="center">
-  <img src="poissongit.png" width="45%"/>
-  <img src="poissongit1.png" width="45%"/>
+  <img src="images/poissongit.png" width="45%"/>
+  <img src="images/poissongit1.png" width="45%"/>
 </p>
 
-### Example 2
-
 <p align="center">
-  <img src="3dpoisson.png" width="45%"/>
-  <img src="3dpoisson1.png" width="45%"/>
+  <em>Representative prediction results and corresponding reference solutions produced by Alternating RandONets.</em>
 </p>
 
-### Example 3
+### High-dimensional result visualization
 
 <p align="center">
-  <img src="heatgit.png" width="45%"/>
-  <img src="heatgit1.png" width="45%"/>
+  <img src="images/3dpoisson.png" width="45%"/>
+  <img src="images/3dpoisson1.png" width="45%"/>
 </p>
 
-### Example 4
-
 <p align="center">
-  <img src="burgersgit.png" width="45%"/>
-  <img src="burgersgit1.png" width="45%"/>
+  <em>Visualization of model performance in a higher-dimensional setting, showing the learned solution structure and reference behavior.</em>
 </p>
 
-### Example 5
+### Heat-type benchmark results
 
 <p align="center">
-  <img src="rdgit.png" width="45%"/>
-  <img src="rdgit1.png" width="45%"/>
+  <img src="images/heatgit.png" width="45%"/>
+  <img src="images/heatgit1.png" width="45%"/>
+</p>
+
+<p align="center">
+  <em>Prediction and comparison results on a heat-type benchmark, illustrating the accuracy of the learned operator.</em>
+</p>
+
+### Burgers-type benchmark results
+
+<p align="center">
+  <img src="images/burgersgit.png" width="45%"/>
+  <img src="images/burgersgit1.png" width="45%"/>
+</p>
+
+<p align="center">
+  <em>Prediction and comparison results on a Burgers-type benchmark, demonstrating the capability of the model in nonlinear settings.</em>
+</p>
+
+### Reaction-diffusion-type benchmark results
+
+<p align="center">
+  <img src="images/rdgit.png" width="45%"/>
+  <img src="images/rdgit1.png" width="45%"/>
+</p>
+
+<p align="center">
+  <em>Prediction and comparison results on a reaction-diffusion-type benchmark, showing the robustness of Alternating RandONets across different operator learning tasks.</em>
 </p>
 
 ---
