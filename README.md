@@ -111,18 +111,18 @@ python rdtest.py
 
 ## File Description
 
-- `possiontest.py` - standard Alternating RandONets experiment
-- `pi-possiontest.py` - physics-informed Alternating RandONets experiment
-- `poisson5d.py` - higher-dimensional experiment
-- `heattest.py` - benchmark experiment
-- `burgerstest.py` - benchmark experiment
-- `rdtest.py` - benchmark experiment
+- `possiontest.py` - Alternating RandONets for the Poisson equation
+- `pi-possiontest.py` - physics-informed Alternating RandONets for the Poisson equation
+- `poisson5d.py` - Alternating RandONets for the 5D Poisson equation
+- `heattest.py` - Alternating RandONets for the heat equation
+- `burgerstest.py` - Alternating RandONets for the Burgers equation
+- `rdtest.py` - Alternating RandONets for the reaction-diffusion equation
 
 ---
 
 ## Visualization Results
 
-### Prediction and reference visualization
+### Poisson equation
 
 <p align="center">
   <img src="images/poissongit.png" width="45%"/>
@@ -130,10 +130,10 @@ python rdtest.py
 </p>
 
 <p align="center">
-  <em>Representative prediction results and corresponding reference solutions produced by Alternating RandONets.</em>
+  <em>Left: data-driven result for the Poisson equation. Right: unsupervised result for the Poisson equation.</em>
 </p>
 
-### High-dimensional result visualization
+### 3D Poisson equation
 
 <p align="center">
   <img src="images/3dpoisson.png" width="45%"/>
@@ -141,10 +141,10 @@ python rdtest.py
 </p>
 
 <p align="center">
-  <em>Visualization of model performance in a higher-dimensional setting, showing the learned solution structure and reference behavior.</em>
+  <em>Left: data-driven result for the 3D Poisson equation. Right: unsupervised result for the 3D Poisson equation.</em>
 </p>
 
-### Heat-type benchmark results
+### Heat equation
 
 <p align="center">
   <img src="images/heatgit.png" width="45%"/>
@@ -152,10 +152,10 @@ python rdtest.py
 </p>
 
 <p align="center">
-  <em>Prediction and comparison results on a heat-type benchmark, illustrating the accuracy of the learned operator.</em>
+  <em>Left: data-driven result for the heat equation. Right: unsupervised result for the heat equation.</em>
 </p>
 
-### Burgers-type benchmark results
+### Burgers equation
 
 <p align="center">
   <img src="images/burgersgit.png" width="45%"/>
@@ -163,10 +163,10 @@ python rdtest.py
 </p>
 
 <p align="center">
-  <em>Prediction and comparison results on a Burgers-type benchmark, demonstrating the capability of the model in nonlinear settings.</em>
+  <em>Left: data-driven result for the Burgers equation. Right: unsupervised result for the Burgers equation.</em>
 </p>
 
-### Reaction-diffusion-type benchmark results
+### Reaction-diffusion equation
 
 <p align="center">
   <img src="images/rdgit.png" width="45%"/>
@@ -174,7 +174,7 @@ python rdtest.py
 </p>
 
 <p align="center">
-  <em>Prediction and comparison results on a reaction-diffusion-type benchmark, showing the robustness of Alternating RandONets across different operator learning tasks.</em>
+  <em>Left: data-driven result for the reaction-diffusion equation. Right: unsupervised result for the reaction-diffusion equation.</em>
 </p>
 
 ---
@@ -185,25 +185,6 @@ python rdtest.py
 - The code is organized as independent scripts for different benchmark settings.
 - The current implementation emphasizes efficiency, simplicity, and reproducibility.
 - The framework can be further adapted to other operator learning tasks by modifying the data generation and evaluation components.
-
----
-
-## Citation
-
-If you use this repository in your research, please cite the corresponding paper:
-
-```bibtex
-@article{alternatingrandonets,
-  title   = {Alternating RandONets: Efficient Operator Learning via Random Projection and Alternating Optimization},
-  author  = {Author(s)},
-  journal = {arXiv / Journal},
-  year    = {2026}
-}
-```
-
-Please replace this entry with the final publication information.
-
----
 
 ## License
 
